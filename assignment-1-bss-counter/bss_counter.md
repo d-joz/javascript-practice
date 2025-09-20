@@ -43,5 +43,3 @@ Substring: 1
 Binary: 10011
 Answer: 3
 ```
-
-10 00 00 00 00 00 1
