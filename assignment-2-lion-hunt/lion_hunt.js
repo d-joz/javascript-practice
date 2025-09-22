@@ -17,7 +17,7 @@ let zebra = NaN;
 
 let shortestDistance = Infinity;
 
-for (let index = 0; index < savannah.length; index++) {            //
+for (let index = 0; index < savannah.length; index++) {
     lion = savannah[index] === "L" ? index : lion;
     zebra = savannah[index] === "Z" ? index : zebra;
 
