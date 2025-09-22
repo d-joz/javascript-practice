@@ -17,7 +17,7 @@ let zebra = NaN;
 
 let shortestDistance = Infinity;
 
-for (let index = 0; index < savannah.length; index++) {
+for (let index = 0; index < savannah.length; index++) {            //
     lion = savannah[index] === "L" ? index : lion;
     zebra = savannah[index] === "Z" ? index : zebra;
 
@@ -27,6 +27,6 @@ for (let index = 0; index < savannah.length; index++) {
     }
 }
 
-shortestDistance = shortestDistance !== Infinity ? shortestDistance - 1 : -1;
+shortestDistance = shortestDistance !== Infinity ? shortestDistance - 1 : -1;   //offsetting the shortest distance 
 
 console.log("Savannah:-----------------", savannah, "\nDistance to nearest Zebra:", shortestDistance);
