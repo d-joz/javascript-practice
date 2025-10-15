@@ -51,8 +51,8 @@ function createPayTable() {
     ['┃ ', TWO_X, ' ┃ ', TWO_X, ' ┃ ', TWO_X, ' ┃ ', 1200, ' ┃ ', 2400, ' ┃ ', 3600, ' ┃' + seperator], //1
     ['┃ ', RED_7, ' ┃ ', RED_7, ' ┃ ', RED_7, ' ┃ ', 100, '  ┃ ', 200, '  ┃ ', 300, '  ┃' + seperator], //2
     ['┃ ', PINK_7, ' ┃ ', PINK_7, ' ┃ ', PINK_7, ' ┃ ', 80, '   ┃ ', 160, '  ┃ ', 240, '  ┃' + seperator], //3
-    ['┃ ', BLUE_7, ' ┃ ', BLUE_7, ' ┃ ', BLUE_7, ' ┃ ', 60, '   ┃ ', 120, '  ┃ ', 90, '   ┃' + seperator + anyLine], //4
-    ['┃ ', ':7:', ' ┃ ', ':7:', ' ┃ ', ':7:', ' ┃ ', 60, '   ┃ ', 120, '  ┃ ', 90, '   ┃' + seperator], //5
+    ['┃ ', BLUE_7, ' ┃ ', BLUE_7, ' ┃ ', BLUE_7, ' ┃ ', 60, '   ┃ ', 120, '  ┃ ', 180, '  ┃' + seperator + anyLine], //4
+    ['┃ ', ':7:', ' ┃ ', ':7:', ' ┃ ', ':7:', ' ┃ ', 30, '   ┃ ', 60, '   ┃ ', 90, '   ┃' + seperator], //5
     ['┃ ', YELLOW_BAR, ' ┃ ', YELLOW_BAR, ' ┃ ', YELLOW_BAR, ' ┃ ', 50, '   ┃ ', 100, '  ┃ ', 150, '  ┃' + seperator], //6
     ['┃ ', GREEN_BAR, ' ┃ ', GREEN_BAR, ' ┃ ', GREEN_BAR, ' ┃ ', 10, '   ┃ ', 20, '   ┃ ', 30, '   ┃' + seperator + anyLine], //7
     ['┃ ', 'bar', ' ┃ ', 'bar', ' ┃ ', 'bar', ' ┃ ', 5, '    ┃ ', 10, '   ┃ ', 15, '   ┃' + anyTop], //8
@@ -196,12 +196,13 @@ function spin(totalPoints, reel, slotMachine, pointsGot, pointsUsed) {
   console.clear();
   console.log(convertToString(slotMachine));
   if (totalPoints <= 0) {
-    console.log(color('you went bankrupt!',9,1))
+    console.log(color('you went bankrupt!', 9, 1))
   }
-  const multiplier = getMultiplier();
-  const spinAgain = confirm('pull the lever?')
-  if (spinAgain) spin(totalPoints, reel, slotMachine, pointsGot, multiplier);
 
+  if (confirm('do you want to bet again?')) {
+    const multiplier = getMultiplier();
+    spin(totalPoints, reel, slotMachine, pointsGot, multiplier);
+  }
   return;
 }
 
@@ -214,15 +215,17 @@ function main() {
 
   console.log(convertToString(PAY_TABLE));
   console.log('\n◉ This is the pay table.\n◉ These are the points you get for the mentioned combinations.\n◉ The max you can bet is 3x.\n◉ The greater you bet the greater you get.');
-  
+
 
   prompt('press any key to continue')
   console.clear();
   console.log(convertToString(slotMachine));
-  
-  const multiplier = getMultiplier();
 
-  if (confirm('pull the lever:')) spin(totalPoints, reel, slotMachine, pointsGot, multiplier);
+
+  if (confirm('do you want to bet:')) {
+    const multiplier = getMultiplier();
+    spin(totalPoints, reel, slotMachine, pointsGot, multiplier);
+  }
 }
 
 main();
