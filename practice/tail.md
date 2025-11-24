@@ -4,7 +4,7 @@
 | --- | --- | --- | --- |
 | **NAME** | `tail` | Last part of file. | Default: Last 10 lines (`-n 10`). |
 | **SYNTAX** | `tail [-Ffr] [-q v] [NUM_OPTS] [file]` | | `NUM_OPTS` = `-n`, `-c`, or `-b`. |
- ---  ---  ---  --- 
+| ---  --- | --- | --- |
 | **AMOUNT** | `-n 50` | 50 **Lines** | The most common option. |
 | **UNITS** | `-c 100` | 100 **Bytes** | Use this for exact size. |
 | **UNITS** | `-b 4` | 4 **Blocks** (512-byte) | Use for block-based reading. |
@@ -31,4 +31,3 @@ $ tail -F /var/log/app.log
 # Display the entire file in reverse order
 $ tail -r bigfile.txt
 ```
-
